@@ -53,12 +53,12 @@ const Main = () => {
                 <h1 className="text-4xl md:text-6xl font-bold text-red-600 w-full">
                   {movie?.title}
                 </h1>
-                
+
                 <div className="my-4">
                   <p className="w-full md:max-w-[50%] lg:max-w-[40%] xl:max-w-[50%] text-gray-200 font-medium text-2xl">
                     {truncateString(movie?.overview)}
                   </p>
-                  <button className="mt-4 bg-red-600 text-white text-2xl border-gray-300 py-4 px-8 rounded-2xl">
+                  <button className="mt-4 bg-red-600 text-white text-xl border-gray-300 py-3 px-8 rounded-2xl">
                     <Link as={Link} to={`/trailers/${movie.id}`}>
                       Watch Trailer
                     </Link>

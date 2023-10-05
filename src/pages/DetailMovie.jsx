@@ -36,16 +36,59 @@ const DetailMovie = () => {
   }
 
   return (
+    // <div className="w-full h-screen text-black">
+    //   <div className="bg-cover bg-center h-screen bg-fixed relative w-full">
+    //     <div className="absolute w-full h-screen bg-gradient-to-r from-blac">
+    //       <img
+    //         className="w-full h-screen object-cover"
+    //         src={`https://image.tmdb.org/t/p/original/${detailMovie?.backdrop_path}`}
+    //         alt={detailMovie.title}
+    //       />
+    //       <div className="absolute w-full top-[30%] p-4 md:p-8">
+    //         <h1 className="text-3xl md:text-5xl font-bold text-red-600 w-1/2">
+    //           {detailMovie.title}
+    //         </h1>
+    //         <div className="flex flex-wrap">
+    //           {detailMovie.genres.map((genre, key) => (
+    //             <p
+    //               key={key}
+    //               type="none"
+    //               className="text-white font-italic mr-2 mb-2 text-xl outline-black"
+    //             >
+    //               {detailMovie.genres[key].name}
+    //             </p>
+    //           ))}
+    //         </div>
+    //         <p className="w-full md:max-w-[50%] lg:max-w-[40%] xl:max-w-[50%] text-gray-200 font-medium text-xl">
+    //           {detailMovie.overview}
+    //         </p>
+    //         <div></div>
+    //         <div className="text-white mt-2 text-1xl">Released: {detailMovie.release_date}</div>
+
+    //         <p className="mt-2  text-white font-light flex">
+    //           <AiFillStar size={20} />
+    //           {detailMovie.vote_average}
+    //         </p>
+
+    //         <button className="mt-4 bg-red-600 text-white text-xl border-gray-300 py-3 px-8 rounded-2xl">
+    //           <Link as={Link} to={`/trailers/${detailMovie.id}`}>
+    //             Watch Trailer
+    //           </Link>
+    //         </button>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
     <div className="w-full h-screen text-black">
-      <div className="w-full h-full">
-        <div className="absolute w-full h-[550px]">
+      <div className="bg-cover bg-center h-screen bg-fixed relative w-full">
+        <div className="absolute w-full h-screen bg-gradient-to-r from-black">
           <img
             className="w-full h-screen object-cover"
             src={`https://image.tmdb.org/t/p/original/${detailMovie?.backdrop_path}`}
             alt={detailMovie.title}
           />
-          <div className="absolute w-full top-[40%] p-4 md:p-8">
-            <h1 className="text-3xl md:text-5xl font-bold text-red-600 w-1/2">
+          <div className="absolute w-full top-[30%] p-4 md:p-8">
+            <h1 className="text-3xl md:text-5xl font-bold text-red-600 w-full md:w-1/2">
               {detailMovie.title}
             </h1>
             <div className="flex flex-wrap">
@@ -63,17 +106,18 @@ const DetailMovie = () => {
               {detailMovie.overview}
             </p>
             <div></div>
-            <div className="text-white mt-2 text-2xl">Released: {detailMovie.release_date}</div>
+            <div className="text-white mt-2 text-1xl">Released: {detailMovie.release_date}</div>
 
-            <p className="mt-2 text-xl text-white font-light flex">
+            <p className="mt-2  text-white font-light flex">
               <AiFillStar size={20} />
               {detailMovie.vote_average}
             </p>
 
-            <Link as={Link} to={`/trailers/${detailMovie.id}`}>
-              <button className="mt-4 bg-red-600 text-white border-gray-300 py-2 px-5 rounded-xl"></button>
-              Watch Trailer
-            </Link>
+            <button className="mt-4 bg-red-600 text-white text-xl border-gray-300 py-3 px-8 rounded-2xl">
+              <Link as={Link} to={`/trailers/${detailMovie.id}`}>
+                Watch Trailer
+              </Link>
+            </button>
           </div>
         </div>
       </div>
