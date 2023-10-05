@@ -50,7 +50,7 @@ const Main = () => {
                 alt={movie?.title}
               />
               <div className="absolute w-full top-[35%] p-4 md:p-8">
-                <h1 className="text-4xl md:text-6xl font-bold text-red-600">
+                <h1 className="text-4xl md:text-6xl font-bold text-red-600 w-full">
                   {movie?.title}
                 </h1>
                 
