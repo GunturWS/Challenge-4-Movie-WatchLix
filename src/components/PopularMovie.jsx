@@ -43,7 +43,10 @@ const PopularMovie = () => {
   return (
     <>
       <div className="container mx-auto px">
-        <h2 className="text-red-600 font-bold md:text-xl p-4">Popular Movies</h2>
+        <div className="flex flex-wrap justify-between">
+          <h2 className="text-white font-bold md:text-xl p-4">Popular Movies</h2>
+          <button className="text-red-600 font-bold md:text-xl p-4">See Popular Movie</button>
+        </div>
 
         <div className="relative flex items-center group">
           <MdChevronLeft
@@ -66,11 +69,7 @@ const PopularMovie = () => {
                     src={`https://image.tmdb.org/t/p/original/${movie?.poster_path}`}
                     alt={movie.title}
                   />
-                  {/* <Link
-                    className=" bg-red-400 h-20 w-20"
-                    as={Link}
-                    to={`/details/${movie.id}`}
-                  ></Link> */}
+
                   <Link
                     className="absolute top-0 left-0 w-full h-full hover:bg-black/80 opacity-0 hover:opacity-100 text-white"
                     as={Link}

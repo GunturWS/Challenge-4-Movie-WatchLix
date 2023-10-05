@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { AiFillStar } from "react-icons/ai";
 
 const DetailMovie = () => {
   const { movieId } = useParams();
@@ -26,7 +27,7 @@ const DetailMovie = () => {
         console.error("Error fetching data:", error);
       }
     };
-    
+
     getDetailMovie();
   }, [movieId]);
 
@@ -39,14 +40,40 @@ const DetailMovie = () => {
       <div className="w-full h-full">
         <div className="absolute w-full h-[550px]">
           <img
-            className="w-full h-auto block"
+            className="w-full h-screen object-cover"
             src={`https://image.tmdb.org/t/p/original/${detailMovie?.backdrop_path}`}
             alt={detailMovie.title}
           />
-          <div className="absolute w-full top-[50%] p-4 md:p-8">
-            <h1 className="text-red-600 text-3xl md:text-5xl font-bold">{detailMovie.title}</h1>
-            <p className="text-red-600 text-3xl">{detailMovie.genre_ids}</p>
-            <p className="text-white w-1/3 text-">{detailMovie.overview}</p>
+          <div className="absolute w-full top-[40%] p-4 md:p-8">
+            <h1 className="text-3xl md:text-5xl font-bold text-red-600 w-1/2">
+              {detailMovie.title}
+            </h1>
+            <div className="flex flex-wrap">
+              {detailMovie.genres.map((genre, key) => (
+                <p
+                  key={key}
+                  type="none"
+                  className="text-white font-italic mr-2 mb-2 text-xl outline-black"
+                >
+                  {detailMovie.genres[key].name}
+                </p>
+              ))}
+            </div>
+            <p className="w-full md:max-w-[50%] lg:max-w-[40%] xl:max-w-[50%] text-gray-200 font-medium text-xl">
+              {detailMovie.overview}
+            </p>
+            <div></div>
+            <div className="text-white mt-2 text-2xl">Released: {detailMovie.release_date}</div>
+
+            <p className="mt-2 text-xl text-white font-light flex">
+              <AiFillStar size={20} />
+              {detailMovie.vote_average}
+            </p>
+
+            <Link as={Link} to={`/trailers/${detailMovie.id}`}>
+              <button className="mt-4 bg-red-600 text-white border-gray-300 py-2 px-5 rounded-xl"></button>
+              Watch Trailer
+            </Link>
           </div>
         </div>
       </div>
