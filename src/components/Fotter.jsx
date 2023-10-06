@@ -86,10 +86,10 @@ const Footer = () => {
           <div>
             <h6 className="font-semibold text-xl text-gray-400">Support</h6>
             <ul>
-              <li className="py-2 text-sm">Visual Studio Code</li>
+              <li className="py-2 text-sm">API Status</li>
               <li className="py-2 text-sm">Postman</li>
               <li className="py-2 text-sm">TMDB API</li>
-              <li className="py-2 text-sm">API Status</li>
+              <li className="py-2 text-sm">Visual Studio Code</li>
             </ul>
           </div>
           <div>

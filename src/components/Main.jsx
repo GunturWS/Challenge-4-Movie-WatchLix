@@ -39,7 +39,38 @@ const Main = () => {
   };
 
   return (
-    <div className="w-full h-screen text-black">
+    // <div className="w-full h-screen text-black">
+    //   <div className="bg-cover bg-center h-screen bg-fixed relative w-full">
+    //     <div className="absolute w-full h-screen bg-gradient-to-r from-black">
+    //       {trendingMovies.map((movie) => (
+    //         <div key={movie.id}>
+    //           <img
+    //             className="w-full h-screen object-cover"
+    //             src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
+    //             alt={movie?.title}
+    //           />
+    //           <div className="absolute w-full top-[30%] p-4 md:p-8">
+    //             <div className="my-4">
+    //               <h1 className="text-3xl md:text-5xl font-bold text-red-600 w-full md:w-1/2">
+    //                 {movie?.title}
+    //               </h1>
+
+    //               <p className="w-full md:max-w-[50%] lg:max-w-[40%] xl:max-w-[50%] text-gray-200 font-medium text-xl">
+    //                 {truncateString(movie?.overview)}
+    //               </p>
+    //               <button className="mt-4 bg-red-600 text-white text-xl border-gray-300 py-3 px-8 rounded-2xl">
+    //                 <Link as={Link} to={`/trailers/${movie.id}`}>
+    //                   Watch Trailer
+    //                 </Link>
+    //               </button>
+    //             </div>
+    //           </div>
+    //         </div>
+    //       ))}
+    //     </div>
+    //   </div>
+    // </div>
+        <div className="w-full h-screen text-black">
       <div className="bg-cover bg-center h-screen bg-fixed relative w-full">
         <div className="absolute w-full h-screen bg-gradient-to-r from-black">
           {trendingMovies.map((movie) => (
@@ -50,11 +81,11 @@ const Main = () => {
                 alt={movie?.title}
               />
               <div className="absolute w-full top-[30%] p-4 md:p-8">
-                <h1 className="text-3xl md:text-5xl font-bold text-red-600 w-full md:w-1/2">
-                  {movie?.title}
-                </h1>
-
                 <div className="my-4">
+                  <h1 className="text-3xl md:text-5xl font-bold text-red-600 w-full md:w-1/2">
+                    {movie?.title}
+                  </h1>
+
                   <p className="w-full md:max-w-[50%] lg:max-w-[40%] xl:max-w-[50%] text-gray-200 font-medium text-xl">
                     {truncateString(movie?.overview)}
                   </p>

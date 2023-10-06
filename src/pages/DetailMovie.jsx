@@ -102,14 +102,14 @@ const DetailMovie = () => {
                 </p>
               ))}
             </div>
-            <p className="w-full md:max-w-[50%] lg:max-w-[40%] xl:max-w-[50%] text-gray-200 font-medium text-xl">
+            <p className="flex flex-wrap w-full md:max-w-[50%] lg:max-w-[40%] xl:max-w-[50%] text-gray-200 font-medium text-xl">
               {detailMovie.overview}
             </p>
             <div></div>
-            <div className="text-white mt-2 text-1xl">Released: {detailMovie.release_date}</div>
+            <div className="text-white mt-2 text-xl">Released: {detailMovie.release_date}</div>
 
             <p className="mt-2  text-white font-light flex">
-              <AiFillStar size={20} />
+              <AiFillStar className="text-yellow-600 " size={20} />
               {detailMovie.vote_average}
             </p>
 
