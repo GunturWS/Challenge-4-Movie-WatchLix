@@ -5,6 +5,31 @@ import axios from "axios";
 const TrailerMovie = () => {
   const { movieId } = useParams();
   const [trailerMovie, setTrailerMovie] = useState(null);
+  const [poster, setPoster] = useState(null);
+
+  useEffect(() => {
+    const getPoster = async () => {
+      try {
+        const response = await axios.get(
+          `${import.meta.env.VITE_API_URL}/3/movie/${movieId}?language=en-US&page=1`,
+          {
+            headers: {
+              Authorization: `Bearer ${import.meta.env.VITE_API_AUTH_TOKEN}`,
+            },
+          }
+        );
+        console.log(response.data);
+
+        if (response.data) {
+          setPoster(response.data);
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    getPoster();
+  }, [movieId]);
 
   useEffect(() => {
     const getTrailerMovie = async () => {
@@ -36,15 +61,18 @@ const TrailerMovie = () => {
 
   // Gunakan komponen iframe untuk menampilkan trailer
   return (
-    <div className="w-full h-full">
-      <div className="px-30 py-30">
-        <iframe
-          className="w-full h-screen px-52 py-20"
-          src={`https://www.youtube.com/embed/${trailerMovie}`}
-          title="Trailer"
-          allowfullscreen
-        ></iframe>
-      </div>
+    <div className=" realtive w-full">
+      <img
+        className="w-full h-screen"
+        src={`https://image.tmdb.org/t/p/original/${poster?.backdrop_path}`}
+      />
+
+      <iframe
+        className="absolute top-0 w-full h-screen px-10 py-72 2xl:px-52 2xl:py-20  flex items-center justify-center"
+        src={`https://www.youtube.com/embed/${trailerMovie}`}
+        title={trailerMovie?.name}
+        allowfullscreen
+      ></iframe>
     </div>
   );
 };

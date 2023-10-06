@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+
 
 const PopularMovie = () => {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -101,6 +103,10 @@ const PopularMovie = () => {
       </div>
     </>
   );
+};
+
+PopularMovie.propTypes = {
+  PopuMovies: PropTypes.array
 };
 
 export default PopularMovie;

@@ -1,6 +1,7 @@
 // import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -19,9 +20,12 @@ const Navbar = () => {
   return (
     <header className="p-4 fixed w-full z-50">
       <nav className="flex flex-col justify-between items-center md:flex-row">
+        <Link as={Link} to={`/`}>
         <a href="#" className="text-4xl font-bold text-red-600 mb-2">
           Movielist
         </a>
+        </Link>
+        
         <div className="w-full relative mb-3 md:w-1/2 md:mb-0">
           <form action="search" onSubmit={handleSearch}>
             <input

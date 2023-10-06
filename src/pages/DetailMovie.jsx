@@ -38,14 +38,14 @@ const DetailMovie = () => {
   return (
     // <div className="w-full h-screen text-black">
     //   <div className="bg-cover bg-center h-screen bg-fixed relative w-full">
-    //     <div className="absolute w-full h-screen bg-gradient-to-r from-blac">
+    //     <div className="absolute w-full h-screen bg-gradient-to-r from-black">
     //       <img
     //         className="w-full h-screen object-cover"
     //         src={`https://image.tmdb.org/t/p/original/${detailMovie?.backdrop_path}`}
     //         alt={detailMovie.title}
     //       />
     //       <div className="absolute w-full top-[30%] p-4 md:p-8">
-    //         <h1 className="text-3xl md:text-5xl font-bold text-red-600 w-1/2">
+    //         <h1 className="text-3xl md:text-5xl font-bold text-red-600 w-full md:w-1/2">
     //           {detailMovie.title}
     //         </h1>
     //         <div className="flex flex-wrap">
@@ -59,14 +59,14 @@ const DetailMovie = () => {
     //             </p>
     //           ))}
     //         </div>
-    //         <p className="w-full md:max-w-[50%] lg:max-w-[40%] xl:max-w-[50%] text-gray-200 font-medium text-xl">
+    //         <p className="flex flex-wrap w-full md:max-w-[50%] lg:max-w-[40%] xl:max-w-[50%] text-gray-200 font-medium text-xl">
     //           {detailMovie.overview}
     //         </p>
     //         <div></div>
-    //         <div className="text-white mt-2 text-1xl">Released: {detailMovie.release_date}</div>
+    //         <div className="text-white mt-2 text-xl">Released: {detailMovie.release_date}</div>
 
     //         <p className="mt-2  text-white font-light flex">
-    //           <AiFillStar size={20} />
+    //           <AiFillStar className="text-yellow-600 " size={20} />
     //           {detailMovie.vote_average}
     //         </p>
 
@@ -79,19 +79,19 @@ const DetailMovie = () => {
     //     </div>
     //   </div>
     // </div>
-    <div className="w-full h-screen text-black">
-      <div className="bg-cover bg-center h-screen bg-fixed relative w-full">
-        <div className="absolute w-full h-screen bg-gradient-to-r from-black">
-          <img
-            className="w-full h-screen object-cover"
-            src={`https://image.tmdb.org/t/p/original/${detailMovie?.backdrop_path}`}
-            alt={detailMovie.title}
-          />
-          <div className="absolute w-full top-[30%] p-4 md:p-8">
-            <h1 className="text-3xl md:text-5xl font-bold text-red-600 w-full md:w-1/2">
+    <>
+      <div className="realtive">
+        <img
+          className="w-full h-screen "
+          src={`https://image.tmdb.org/t/p/original/${detailMovie?.backdrop_path}`}
+          alt={detailMovie.title}
+        />
+        <div className="absolute top-4 bottom-4 left-8  flex items-center">
+          <div className=" flex-col justify-center lg:pl-40 gap-10">
+            <h1 className="xl:text-6xl w-[50%] text-red-600 font-semibold text-2xl lg:text-5xl">
               {detailMovie.title}
             </h1>
-            <div className="flex flex-wrap">
+            <div className="flex flex-row gap-4 text-white lg:text-lg font-medium">
               {detailMovie.genres.map((genre, key) => (
                 <p
                   key={key}
@@ -102,9 +102,7 @@ const DetailMovie = () => {
                 </p>
               ))}
             </div>
-            <p className="flex flex-wrap w-full md:max-w-[50%] lg:max-w-[40%] xl:max-w-[50%] text-gray-200 font-medium text-xl">
-              {detailMovie.overview}
-            </p>
+            <p className="lg:text-2xl text-white w-[50%] md:font-medium">{detailMovie.overview}</p>
             <div></div>
             <div className="text-white mt-2 text-xl">Released: {detailMovie.release_date}</div>
 
@@ -121,7 +119,7 @@ const DetailMovie = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

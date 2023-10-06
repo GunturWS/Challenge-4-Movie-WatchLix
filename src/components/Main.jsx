@@ -39,6 +39,36 @@ const Main = () => {
   };
 
   return (
+    <div className="">
+      <div className="overflow-hidden relative w-full">
+        <div className="w-full h-[500px]  lg:h-screen flex items-center justify-center">
+          {trendingMovies.map((movie) => (
+            <div key={movie.id} className="relative w-full h-full flex-shrink-0">
+              <img
+                className="w-full h-full"
+                src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
+                alt={movie?.title}
+              />
+              <div className="flex items-center bottom-4 top-4 lg:left-8 lg:px-18 xl:mx-40 pl-6 absolute">
+                <div className="flex flex-col justify-center lg:gap-10 xl:gap-18 xl:pl-16 gap-2 lg:pl-6">
+                  <h1 className="xl:text-6xl w-[50%] text-red-600 font-semibold text-2xl lg:text-5xl">
+                    {movie?.title}
+                  </h1>
+                  <p className="w-full md:max-w-[50%] lg:max-w-[40%] xl:max-w-[50%] text-gray-200 font-medium text-xl">
+                    {truncateString(movie?.overview)}
+                  </p>
+                  <button className="cursor-pointer gap-2 px-2 items-center py-1 flex lg:px-6 lg:py-3 w-max bg-red-600 lg:text-3xl text-white rounded-xl">
+                    <Link as={Link} to={`/trailers/${movie.id}`} className="">
+                      Watch Trailer
+                    </Link>
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
     // <div className="w-full h-screen text-black">
     //   <div className="bg-cover bg-center h-screen bg-fixed relative w-full">
     //     <div className="absolute w-full h-screen bg-gradient-to-r from-black">
@@ -59,69 +89,6 @@ const Main = () => {
     //                 {truncateString(movie?.overview)}
     //               </p>
     //               <button className="mt-4 bg-red-600 text-white text-xl border-gray-300 py-3 px-8 rounded-2xl">
-    //                 <Link as={Link} to={`/trailers/${movie.id}`}>
-    //                   Watch Trailer
-    //                 </Link>
-    //               </button>
-    //             </div>
-    //           </div>
-    //         </div>
-    //       ))}
-    //     </div>
-    //   </div>
-    // </div>
-        <div className="w-full h-screen text-black">
-      <div className="bg-cover bg-center h-screen bg-fixed relative w-full">
-        <div className="absolute w-full h-screen bg-gradient-to-r from-black">
-          {trendingMovies.map((movie) => (
-            <div key={movie.id}>
-              <img
-                className="w-full h-screen object-cover"
-                src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
-                alt={movie?.title}
-              />
-              <div className="absolute w-full top-[30%] p-4 md:p-8">
-                <div className="my-4">
-                  <h1 className="text-3xl md:text-5xl font-bold text-red-600 w-full md:w-1/2">
-                    {movie?.title}
-                  </h1>
-
-                  <p className="w-full md:max-w-[50%] lg:max-w-[40%] xl:max-w-[50%] text-gray-200 font-medium text-xl">
-                    {truncateString(movie?.overview)}
-                  </p>
-                  <button className="mt-4 bg-red-600 text-white text-xl border-gray-300 py-3 px-8 rounded-2xl">
-                    <Link as={Link} to={`/trailers/${movie.id}`}>
-                      Watch Trailer
-                    </Link>
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-    // <div className="w-full h-screen text-black">
-    //   <div className="w-full h-full">
-    //     <div className="absolute w-full h-full">
-    //       {trendingMovies.map((movie) => (
-    //         <div key={movie.id}>
-    //           <img
-    //             className="w-full h-screen object-cover"
-    //             src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
-    //             alt={movie?.title}
-    //           />
-    //           <div className="absolute w-full top-[30%] p-4 md:p-8">
-    //             <h1 className="text-4xl md:text-5xl font-bold text-red-600 w-11/12 md:w-1/2 lg:w-1/3 xl:w-1/4">
-    //               {movie?.title}
-    //             </h1>
-    //             <div className="my-4">
-    //               <p className="w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200 ">
-    //                 {truncateString(movie?.overview)}
-    //               </p>
-
-    //               <p className="text-white font-poppins font">Released: {movie?.release_date}</p>
-    //               <button className="bg-red-600 text-white border-gray-300 py-2 px-5 rounded-xl">
     //                 <Link as={Link} to={`/trailers/${movie.id}`}>
     //                   Watch Trailer
     //                 </Link>

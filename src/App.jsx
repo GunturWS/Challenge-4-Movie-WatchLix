@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import DetailMovie from "./pages/DetailMovie";
 import TrailerMovie from "./components/TrailerMovie";
 import Footer from "./components/Fotter";
-import SeePopular from "./pages/SeePopular";
+import SeePopular from "./components/SeePopular";
 // import Main from "./components/Main";
 // import Popular from "./components/Popular";
 
@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/details/:movieId" element={<DetailMovie />} />
-          <Route path="/seePopulars" element={<SeePopular />} />
+          <Route path="/see-populars" element={<SeePopular />} />
           <Route path="/trailers/:movieId" element={<TrailerMovie />} />
         </Routes>
         <Footer />
